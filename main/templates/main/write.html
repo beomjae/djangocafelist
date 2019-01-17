@@ -51,7 +51,12 @@
                 <header>
                     <h1>카페등록</h1>
                 </header>
-                <form>
+                <form method="POST" action="/cafelist/" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_ul }}
+                    <button type="submit">submit</button>
+                </form>
+                <!-- <form>
                     <div class="form-row">
                         <div class="form-row-content">
                             <span class="form-row-label">카페위치</span>
@@ -154,7 +159,7 @@
                     <div class="form-row form-row-btn-con">
                         <input type="submit" value="등록하기" class="btn big-btn cafe-write-btn">
                     </div>
-                </form>
+                </form> -->
             </div>
         </article>
         <!-- 카페등록 페이지 내용 끝 -->

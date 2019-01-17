@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Cafe
+from .forms import CafeForm
 
 def index(request):
     if request.method == "POST":
@@ -31,10 +32,17 @@ def about(request):
     return render(request, 'main/about.html')
 
 def write(request):
-    return render(request, 'main/write.html')
+    form = CafeForm()
+    return render(request, 'main/write.html', {'form': form})
 
 def cafelist(request):
     cafelistobj = Cafe.objects.all()
+    if request.method == "POST":
+        form = CafeForm(request.POST, request.FILES)
+        if form.is_valid():
+            cafe = form.save(commit=False)
+            cafe.save()
+            return render(request, 'main/cafedetails.html', {'cafeobj': cafe})
     return render(request, 'main/cafelist.html', {'cafelistobj':cafelistobj})
 
 def cafedetails(request, pk):
