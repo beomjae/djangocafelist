@@ -56,7 +56,8 @@
                     {{ form.as_ul }}
                     <button type="submit">submit</button>
                 </form>
-                <!-- <form>
+                <!-- <form method="POST" action="/cafelist/" enctype="multipart/form-data">
+                    {% csrf_token %}
                     <div class="form-row">
                         <div class="form-row-content">
                             <span class="form-row-label">카페위치</span>
