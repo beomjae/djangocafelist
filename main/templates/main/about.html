@@ -2,7 +2,7 @@
 
 {% block content %}
 {% load staticfiles %}
-<body class="page-list">
+<body class="page-about">
 <div class="jejucafe-container">
     <!-- global-header 시작 -->
     <header class="global-header">
@@ -45,41 +45,22 @@
 
     <!-- content-area 시작 -->
     <div class="content-area">
-        <!-- cafe-list 시작 -->
-        <div class="cafe-list">
+        <!-- 소개 페이지 내용 시작 -->
+        <article class="page-content">
             <div class="grid">
-              {% for i in cafelistobj %}
-                <!-- 카페 1개 시작 -->
-                <section class="cafe-item">
-                    <figure class="cafe-item-photo">
-                        {% if i.mainphoto %}
-                        <img src="{{ i.mainphoto.url }}" alt="">
-                        {% endif %}
-                    </figure>
-                    <div class="cafe-item-info">
-                        <a href="/cafelist/{{i.pk}}" style="text-decoration:none"><h2>{{i.name}}</h2></a>
-                        <p>개발자와 디자이너들을 위한 카페에요.</p>
-                        <ul class="cafe-item-contact">
-                            <li>
-                                <i class="fas fa-map-marker-alt"></i>
-                                {{i.locate}}
-                            </li>
-                            <li>
-                                <i class="fas fa-phone"></i>
-                                {{i.phone}}
-                            </li>
-                            <li>
-                                <i class="fab fa-instagram"></i>
-                                {{i.insta}}
-                            </li>
-                        </ul>
-                    </div>
+                <header>
+                    <h1>제주도 카페, 여기 다 있어요!</h1>
+                </header>
+                <section class="content-section">
+                    <header>
+                        <h2>섹션 제목</h2>
+                    </header>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem cupiditate molestias vel veritatis odio repellat quod velit, at delectus dolor tenetur, laudantium atque, inventore. Quia obcaecati accusantium consequuntur dignissimos fugit.</p>
+                    <p>제주코딩베이스캠프에서 제작하는 예제 웹사이트입니다.</p>
                 </section>
-                <!-- 카페 1개 끝 -->
-                {% endfor %}
             </div>
-        </div>
-        <!-- cafe-list 끝 -->
+        </article>
+        <!-- 소개 페이지 내용 끝 -->
     </div>
     <!-- content-area 끝 -->
 
