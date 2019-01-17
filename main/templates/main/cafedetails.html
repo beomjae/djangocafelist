@@ -13,6 +13,7 @@
     {% if cafe.mainphoto %}
         <img src="{{cafe.mainphoto.url}}" alt="">
     {% endif %}
+    <p>{{cafe.tag.names.0}}</p>
     <a href="/cafelist">목록</a>
 
     <div id="disqus_thread"></div>
